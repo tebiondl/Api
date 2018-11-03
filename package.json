@@ -4,7 +4,8 @@
   "description": "RESTful todoListApi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,4 +29,5 @@
     "express": "^4.16.3",
     "mongoose": "^5.3.0"
   }
+  
 }
