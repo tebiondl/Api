@@ -45,13 +45,20 @@ var url = "http://lmgtfy.com/?q=" + lGString;
 
 app.get("/fecha", getTime);
 
-const apiRoutes = require('./api/routes/api') // Añádelo debajo de el require de Express.
+const apiRoutes = require('./api/routes/api')
+const jobRoutes = require('./api/routes/job') 
 
 app.get('/api/posts/', apiRoutes.loadPosts)
 app.get('/api/posts/:id', apiRoutes.loadPost)
 app.post('/api/posts/', apiRoutes.newPost)
 app.put('/api/posts/', apiRoutes.updatePost) // No lleva parámetro id, ya que lo mandamos en el body.
 app.delete('/api/posts/:id', apiRoutes.deletePost)
+
+app.get('/api/jobs/', jobRoutes.loadJobs)
+app.get('/api/jobs/:id', jobRoutes.loadJob)
+app.post('/api/jobs/', jobRoutes.newJob)
+app.put('/api/jobs/', jobRoutes.updateJob) // No lleva parámetro id, ya que lo mandamos en el body.
+app.delete('/api/jobs/:id', jobRoutes.deleteJob)
 
 
 function handleError(err) {
